@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title></title>
+    <link rel='stylesheet' href='styles.css' />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>
+        <h1>JavaScript Loops</h1>
+      </header>
+      <div class='flex'>
+        <a class='nav-link' href='#introduction'>Intro<span class='hidden'>duction</span></a>
+        <a class='nav-link' href='#the_for_loop'><span class='hidden'>The </span>For Loop</a>
+        <a class='nav-link' href='#js_for_in_and_for_of'><span class='hidden'>JS </span>For In and For Of</a>
+        <a class='nav-link' href='#the_while_loop'><span class='hidden'>The </span>While Loop</a>
+        <a class='nav-link' href='#the_do_while_loop'><span class='hidden'>The </span>Do While Loop</a>
+      </div>
+    </nav>
+    <main id="main-doc">
+      <section class='main-section' id='introduction'>
+        <header><h2>Introduction</h2></header>
+        <p>Loops are handy, if you want to run the same code over and over again, each time with a different value.<br /><br />
+        Often this is the case when working with arrays.</p>
+        <code class='example'>
+          for (let i = 0; i < cars.length; i++) {<br />
+          <span class='indent'>text += cars[i];</span><br />
+          }
+        </code>
+        <p>JavaScript supports different kinds of loops:
+          <ul>
+            <li><strong>for</strong> - loops through a block of code a number of times</li>
+            <li><strong>for in</strong> - loops through the properties of an object</li>
+            <li><strong>for of</strong> - loops through the values of an iterable object</li>
+            <li><strong>while</strong> - loops through a block of code while a specified condition is true</li>
+            <li><strong>do while</strong> - also loops through a block of code while a specified condition is true</li>
+          </ul>
+        </p>
+      </section>
+      <section class='main-section' id='the_for_loop'>
+        <header><h2>The For Loop</h2></header>
+        <p>The <code>for</code> statement creates a loop with 3 optional expressions:</p>
+        <code class='example'>
+          for (expression 1; expression 2; expression 3) {<br />
+          <span class='indent'>//code block to be executed</span><br />
+          }
+        </code>
+        <ul>
+          <li><strong>Expression 1</strong> is executed (one time) before the execution of the code block.</li>
+          <li><strong>Expression 2</strong> defines the condition for executing the code block.</li>
+          <li><strong>Expression 3</strong> is executed (every time) after the code block has been executed.</li>
+        </ul>
+        <p>In example:</p>
+        <code class='example'>
+          for (let i = 0; i < 5; i++) {<br />
+          <span class='indent'>text += "The number is " + i;</span><br />
+          }
+        </code>
+        <p>From the example above, you can read:</p>
+        <ul>
+          <li><strong>Expression 1</strong> sets a variable before the loop starts (let i = 0).</li>
+          <li><strong>Expression 2</strong> defines the condition for the loop to run (i must be less than 5).</li>
+          <li><strong>Expression 3</strong> increases a value (i++) each time the code block in the loop has been executed.</li>
+        </ul>
+      </section>
+      <section class='main-section' id='js_for_in_and_for_of'>
+        <header><h2>JS For In and For Of</h2></header>
+        <h3>For In</h3>
+        <p>The JavaScript <code>for in</code> statement loops through the properties of an Object or the items of an Array:</p>
+        <code class='example'>
+          for (let x in person) {<br />
+          <span class='indent'>text += person[x];</span><br />
+          }
+        </code>
+        <ul>
+          <li>The <code>for in</code> loop iterates over a person object</li>
+          <li>Each iteration returns a key (x)</li>
+          <li>The key is used to access the value of the key</li>
+          <li>The value of the key is person[x]</li>
+        </ul>
+        <p class='advice'>Do not use <code>for in</code> over an Array if the index order is important.<br />
+        The index order is implementation-dependent, and array values may not be accessed in the order you expect.<br />
+        It is better to use a <code>for</code> loop, a <code>for of</code> loop, or <code>Array.forEach()</code> when the order is important.</p>
+        <h3>For Of</h3>
+        <p>The JavaScript <code>for of</code> statement loops through the values of an iterable object. It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:</p>
+        <code class='example'>
+          for (let x of language) {<br />
+          <span class='indent'>text += x;</span><br />
+          }
+        </code>
+      </section>
+      <section class='main-section' id='the_while_loop'>
+        <header><h2>The While Loop</h2></header>
+        <p>The <code>while</code> loop loops through a block of code as long as a specified condition is true.</p>
+        <code class='example'>
+          while (condition) {<br />
+          <span class='indent'>//code block to be executed</span><br />
+          }
+        </code>
+        <p>In the following example, the code in the loop will run, over and over again, as long as a variable (i) is less than 10:</p>
+        <code class='example'>
+           while (i < 10) {<br />
+           <span class='indent'>text += "The number is " + i;</span><br />
+           <span class='indent'>i++;</span><br />
+           }
+        </code>
+        <p class='advice'>If you forget to increase the variable used in the condition, the loop will never end. This will crash your browser.</p>
+      </section>
+      <section class='main-section' id='the_do_while_loop'>
+        <header><h2>The Do While Loop</h2></header>
+        <p>The <code>do while</code> loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.</p>
+        <code class='example'>
+          do {<br />
+          <span class='indent'>// code block to be executed</span><br />
+          } while (condition);
+        </code>
+        <p>The example below uses a <code>do while</code> loop. The loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested:</p>
+        <code class='example'>
+          do {<br />
+          <span class='indent'>text += "The number is " + i;</span><br />
+          <span class='indent'>i++;</span><br />
+          } while (i < 10);
+        </code>
+        <p class='advice'>Do not forget to increase the variable used in the condition, otherwise the loop will never end!</p>
+      </section>
+    </main>
+    <footer>
+      This page was made for educational purposes.
+    </footer>
+  </body>
+</html>

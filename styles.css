@@ -1,0 +1,204 @@
+*:not(code, code *) {
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  min-width: 900px;
+  background-color: #0f0f31;
+  color: #fafaa3;
+}
+
+nav header {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 800px;
+  padding: 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  width: 900px;
+  margin: 0 auto;
+  padding: 0 15px 15px;
+}
+
+.nav-link {
+  margin: 0 .2rem;
+  padding: .5rem;
+  display: block;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-link:hover {
+  background-color: #fff;
+  color: #0f0f31;
+}
+
+.main-section {
+  padding: 150px 50px 0;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.main-section header {
+  padding: 15px 0;
+}
+
+ul {
+  margin: 10px -20px;
+}
+
+li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+code {
+  font-size: 1.1rem;
+}
+
+code:not(.example) {
+  font-size: 1rem;
+}
+
+code:not(.example, .advice code) {
+  background-color: #ccc;
+  padding: .15rem;
+  border-radius: 5px;
+}
+
+.example {
+  display: block;
+  margin: 20px;
+}
+
+.indent {
+  padding-left: 20px;
+}
+
+.advice {
+  width: 100%;
+  background-color: #fafaa3;
+  padding: 2.75rem;
+  border-radius: 10px;
+  color: red;
+  margin: 1.7rem 0;
+}
+
+footer {
+  width: 100%;
+  min-width: 900px;
+  background-color: #0f0f31;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 40px;
+  margin-top: 60px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+
+  nav {
+    min-width: 700px;
+  }
+
+  nav header {
+    width: 600px;
+    padding: 10px;
+  }
+
+  .flex {
+    width: 700px;
+    padding: 0 10px 10px;
+  }
+
+  .nav-link {
+    margin: 0 .2rem;
+    padding: .1rem;
+    border-radius: 2.5px;
+  }
+
+  .main-section {
+    padding: 80px 30px 0;
+    width: 650px;
+  }
+
+  .advice {
+    padding: 1.75rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+  }
+
+  footer {
+    min-width: 700px;
+    padding: 30px;
+    margin-top: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+
+  nav {
+    min-width: 400px;
+  }
+
+  nav header {
+    width: 400px;
+    padding: 10px;
+  }
+
+  .hidden {
+    font-size: 0;
+  }
+
+  .flex {
+    width: 400px;
+    padding: 0 5px 5px;
+  }
+
+  .nav-link {
+    margin: 0 .2rem;
+    padding: .15rem;
+    border-radius: 2.5px;
+  }
+
+  .main-section {
+    padding: 80px 20px 0;
+    width: 400px;
+  }
+
+  .advice {
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+  }
+
+  footer {
+    min-width: 400px;
+    padding: 20px;
+    margin-top: 30px;
+  }
+}
